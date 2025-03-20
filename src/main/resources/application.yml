@@ -23,6 +23,6 @@ management:
 spring:
   config:
     import:
-      - configserver:http://localhost:8773
+      - optional:configserver:http://localhost:8773
       - classpath:userService/config/application.properties
       - classpath:userService/config/application.yml
