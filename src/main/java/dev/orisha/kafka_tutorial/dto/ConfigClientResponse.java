@@ -1,15 +1,15 @@
 package dev.orisha.kafka_tutorial.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+//@AllArgsConstructor
+//@NoArgsConstructor
+//@Setter
+//@Getter
 public class ConfigClientResponse {
 
-    private String message;
+    private String message = "message";
     private Object data;
 
 }

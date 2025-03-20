@@ -33,7 +33,7 @@
 //        this.counter = 1;
 //    }
 //
-//    @Scheduled(fixedRate = 15000, initialDelay = 10000)
+//    @Scheduled(fixedRate = 15000, initialDelay = 10000, scheduler = "kafkaProducerScheduler")
 //    public void sendEvents() {
 //        CustomerVisitEvent event = CustomerVisitEvent.builder()
 //                .customerId(UUID.randomUUID().toString())

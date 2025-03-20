@@ -17,3 +17,12 @@ management:
       exposure:
         include: refresh
 
+#notification:
+#  type: email
+
+spring:
+  config:
+    import:
+      - configserver:http://localhost:8773
+      - classpath:userService/config/application.properties
+      - classpath:userService/config/application.yml

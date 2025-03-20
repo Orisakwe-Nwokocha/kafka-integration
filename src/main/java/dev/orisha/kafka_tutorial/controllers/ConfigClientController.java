@@ -2,6 +2,10 @@ package dev.orisha.kafka_tutorial.controllers;
 
 import dev.orisha.kafka_tutorial.config.SchedulerProperties;
 import dev.orisha.kafka_tutorial.dto.ConfigClientResponse;
+//import dev.orisha.user_service.dto.UserDTO;
+//import dev.orisha.user_service
+import dev.orisha.user_service.dto.UserDTO;
+import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,6 +18,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -34,6 +40,13 @@ public class ConfigClientController {
     private final RestTemplate restTemplate;
     private final SchedulerProperties schedulerProperties;
 
+    private UserDTO userDTO = new UserDTO();
+//
+    @PostConstruct
+    public void init() {
+        log.info("Initializing ConfigClientController: {}", userDTO);
+    }
+
     @Autowired
     public ConfigClientController(final RestTemplate restTemplate,
                                   final SchedulerProperties schedulerProperties) {
@@ -50,9 +63,10 @@ public class ConfigClientController {
         map.put("daemon", schedulerProperties.isDaemon());
         String response = String.format("%n%s: %s%n%s: %s", "message", message, "data", map);
         log.info("API response: {}", response);
-        ConfigClientResponse configClientResponse = new ConfigClientResponse(message, map);
-        log.info("API response: {}", configClientResponse);
-        return configClientResponse;
+//        ConfigClientResponse configClientResponse = new ConfigClientResponse(message, map);
+//        log.info("API response: {}", configClientResponse);
+//        return configClientResponse;
+        return null;
     }
 
     @PostMapping("/refresh")
