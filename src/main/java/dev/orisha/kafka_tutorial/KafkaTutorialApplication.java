@@ -8,7 +8,6 @@ public class KafkaTutorialApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(KafkaTutorialApplication.class, args);
-		System.out.println("Classpath: " + System.getProperty("java.class.path"));
 	}
 
 }
